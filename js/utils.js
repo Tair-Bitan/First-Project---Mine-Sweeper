@@ -94,18 +94,17 @@ function createShuffledArr(array) {
 }
 
 //---------------- FIND EMPTY CELLS AND GETS THEM INTO AN ARRAY---------------------
-function findEmptyCells() {
-    var emptyCells = [];
-    for (var i = 0; i < gMat.length; i++) {
-        for (var j = 0; j < gMat[i].length; j++) {
-            var currCell = gMat[i][j];
-            if (currCell === '') { //it could be any condition to compair to. right now it finds nothing because every cell in the mat contains 'aaa'
+function findSafeCells(board) {
+    for (var i = 0; i < board.length; i++) {
+        for (var j = 0; j < board[i].length; j++) {
+            var currCell = board[i][j].isMine;
+            if (!currCell) { //it could be any condition to compair to. right now it finds nothing because every cell in the mat contains 'aaa'
                 var pos = { i, j }
-                emptyCells.push(pos)
+                gSafeCells.push(pos);
             }
         }
     }
-    return emptyCells
+    return gSafeCells;
 }
 
 //using the empty array to add num randomly using the shuffled array:

@@ -23,6 +23,7 @@ var gLives = 3;
 var gHintMode = false;
 var gClickCount = 0;
 var gCountFlags = 0;
+var gSafeCells = [];
 var gBestScoreBaby;
 var gBestScorePro;
 var gBestScoreSquad;
@@ -263,12 +264,22 @@ function placeFlag(i, j) {
     }
 }
 
+//---------------- HINT FUNCTION---------------------
+
 function removeHint(elBulb) {
     gHintMode = true;
     console.log(gHintMode);
     playLightBulbSound();
     elBulb.style.visibility = 'hidden';
 }
+
+//---------------- SAFE CLICK FUNCTION---------------------
+
+function safeClick() {
+    findSafeCells(gBoard);
+    console.log(gSafeCells);
+}
+
 //---------------- TIMER FUNCTION---------------------
 // צריך לוודא שיש כפתור שמפעיל את הטיימר, אחרת זה מתפקשש
 
