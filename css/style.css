@@ -159,7 +159,7 @@ table{
   }
 
   .scoreBoard{
-      background-image: url(/img/wood-background.jpg);
+      background-image: url(../img/wood-background.jpg);
       font-size: 25px;
       color: rgb(65, 31, 4);
       font-family: 'Bubblegum Sans', cursive;
@@ -173,7 +173,7 @@ table{
   }
 
   .resetScore{
-    background-image: url(/img/wood-background.jpg);
+    background-image: url(../img/wood-background.jpg);
     font-family: 'Bubblegum Sans', cursive;
     font-size: 25px;
     color: rgb(65, 31, 4);
