@@ -145,7 +145,7 @@ table{
     height: 50px;
   }
 
-  .scoreBoard{
+  /* .scoreBoard{
       background-image: url('/img/wood-background.jpg');
       font-size: 25px;
       color: rgb(65, 31, 4);
@@ -172,4 +172,4 @@ table{
 
   .resetScore:hover{
     transform: scale(1.2);
-  }
+  } */
