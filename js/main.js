@@ -23,6 +23,7 @@ var gLives = 3;
 var gHintMode = false;
 var gClickCount = 0;
 var gCountFlags = 0;
+var gSafeClicks = 3;
 var gSafeCells = [];
 var gBestScoreBaby;
 var gBestScorePro;
@@ -61,20 +62,25 @@ function chosenLevel(btn) {
     playLevelSound()
     document.querySelector('.smiley').innerHTML = '😁';
     gLevel = gLevels[btn]
+    gSafeClicks = 3;
+    document.querySelector('.safeCount').innerHTML = gSafeClicks;
     init()
 }
 
 function init() {
     gCountFlags = 0;
+    gSafeClicks = 3;
+    document.querySelector('.safeCount').innerHTML = gSafeClicks;
     gLives = 3;
     gBoard = buildBoard(); //building the board (without bombs)
     createBomb(gBoard); // another method for creating bombs
     printBoard(gBoard, 'table'); //prints the board
     calcMinesNegs(gBoard);
-    console.log('the board is', gBoard);  //prints to log for check
 }
 
 function resetGame() {
+    gSafeClicks = 3;
+    document.querySelector('.safeCount').innerHTML = gSafeClicks;
     gClickCount = 0;
     gCountFlags = 0;
     gLives = 3;
@@ -276,8 +282,18 @@ function removeHint(elBulb) {
 //---------------- SAFE CLICK FUNCTION---------------------
 
 function safeClick() {
-    findSafeCells(gBoard);
-    console.log(gSafeCells);
+    if (gSafeClicks > 0) {
+        findSafeCells(gBoard);
+        var randCell = gSafeCells[getRandomInt(0, gSafeCells.length - 1)];
+        var randI = randCell.i;
+        var randJ = randCell.j;
+        document.querySelector(`.cell${randI}-${randJ}`).style.backgroundColor = 'green';
+        setTimeout(function () {
+            document.querySelector(`.cell${randI}-${randJ}`).style.backgroundColor = 'transparent';
+        }, 500);
+        gSafeClicks--;
+        document.querySelector('.safeCount').innerHTML = gSafeClicks;
+    }
 }
 
 //---------------- TIMER FUNCTION---------------------
