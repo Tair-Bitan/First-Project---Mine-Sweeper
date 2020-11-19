@@ -5,14 +5,14 @@
 body {
     margin: 0;
     text-align: center;
-    background-image: url('/img/background.jpg');
+    background-image: url('../img/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 h1{
-    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Bubblegum Sans', cursive;
     font-size: 60px;
     color: whitesmoke;
     text-shadow: 2px 2px black;   
@@ -71,16 +71,29 @@ h1{
 
 
 .lifeCount{
-    margin-right: 160px;
     margin-left: -10px;
 
 }
+
+.safe{
+    margin-left: 50px;
+    text-align: left;
+    font-size: 60px;
+}
+
+
+.safeCount{
+    margin-left: -10px;
+
+}
+
 
 .timer{
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     font-size: 40px;
     font-weight: 500;
-    margin-right: 100px;
+    margin-right: 130px;
+    margin-left: 100px;
 
 }
 
@@ -146,7 +159,7 @@ table{
   }
 
   .scoreBoard{
-      background-image: url('/img/wood-background.jpg');
+      background-image: url('../img/wood-background.jpg');
       font-size: 25px;
       color: rgb(65, 31, 4);
       font-family: 'Bubblegum Sans', cursive;
@@ -160,7 +173,7 @@ table{
   }
 
   .resetScore{
-    background-image: url('/img/wood-background.jpg');
+    background-image: url('../img/wood-background.jpg');
     font-family: 'Bubblegum Sans', cursive;
     font-size: 25px;
     color: rgb(65, 31, 4);
