@@ -5,7 +5,7 @@
 body {
     margin: 0;
     text-align: center;
-    background-image: url('../img/background.jpg');
+    background-image: url(../img/background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -64,7 +64,6 @@ h1{
 }
 
 .life{
-    margin-left: 50px;
     text-align: left;
     font-size: 60px;
 }
@@ -76,7 +75,7 @@ h1{
 }
 
 .safe{
-    margin-left: 50px;
+    margin-left: 30px;
     text-align: left;
     font-size: 60px;
 }
@@ -84,6 +83,7 @@ h1{
 
 .safeCount{
     margin-left: -10px;
+    margin-right: -20px;
 
 }
 
@@ -92,8 +92,8 @@ h1{
     font-family: Tahoma, Geneva, Verdana, sans-serif;
     font-size: 40px;
     font-weight: 500;
-    margin-right: 130px;
-    margin-left: 100px;
+    margin-right: 100px;
+    margin-left: 90px;
 
 }
 
@@ -159,7 +159,7 @@ table{
   }
 
   .scoreBoard{
-      background-image: url('../img/wood-background.jpg');
+      background-image: url(/img/wood-background.jpg);
       font-size: 25px;
       color: rgb(65, 31, 4);
       font-family: 'Bubblegum Sans', cursive;
@@ -173,7 +173,7 @@ table{
   }
 
   .resetScore{
-    background-image: url('../img/wood-background.jpg');
+    background-image: url(/img/wood-background.jpg);
     font-family: 'Bubblegum Sans', cursive;
     font-size: 25px;
     color: rgb(65, 31, 4);
