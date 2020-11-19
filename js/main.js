@@ -23,6 +23,9 @@ var gLives = 3;
 var gHintMode = false;
 var gClickCount = 0;
 var gCountFlags = 0;
+var gBestScoreBaby;
+var gBestScorePro;
+var gBestScoreSquad;
 var gBombs = [];
 var gLevels = {
     'EASY': {
@@ -89,6 +92,7 @@ function win() {
     gCountFlags = 0;
     document.querySelector('.smiley').innerHTML = '😎';
     console.log('function win triggered this win messege');  //DELETE when done
+    bestScore();
 }
 
 function loose() {
@@ -279,4 +283,39 @@ function timer() {
 function stopTimer() {
     clearInterval(gTimerInterval);
     document.querySelector('.timer').innerText = '0.0';
+}
+
+//---------------- BEST SCORE FUNCTION---------------------
+function bestScore() {
+    var currScore = document.querySelector('.timer').innerHTML;
+    if (!gBestScoreBaby) gBestScoreBaby = '9999'
+    if (gLevel.SIZE === 4 && currScore < gBestScoreBaby) {
+        gBestScoreBaby = currScore;
+        localStorage.setItem('baby', gBestScoreBaby);
+        document.querySelector('.baby').innerText = localStorage.baby;
+    }
+
+    if (gLevel.SIZE === 8 && currScore < gBestScorePro) {
+        gBestScorePro = currScore;
+        localStorage.setItem('pro', gBestScorePro);
+        document.querySelector('.pro').innerText = localStorage.pro;
+    }
+
+    if (gLevel.SIZE === 12 && currScore < gBestScoreSquad) {
+        gBestScoreSquad = currScore;
+        localStorage.setItem('squad', `${gBestScoreSquad} <br>`);
+        document.querySelector('.squad').innerText = localStorage.squad;
+    }
+    console.log(currScore);
+    // console.log('local storage:', localStorage.bestScoreSquad);
+}
+
+function resetBestScore() {
+    localStorage.clear();
+    gBestScoreBaby = localStorage.baby;
+    gBestScorePro = localStorage.pro;
+    gBestScoreSquad = localStorage.squad;
+    document.querySelector('.baby').innerText = '---------';
+    document.querySelector('.pro').innerText = '---------';
+    document.querySelector('.squad').innerText = '---------';
 }

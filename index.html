@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Display:wght@700&display=swap"
         rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
     <title>First Sprint</title>
 </head>
 
@@ -30,8 +32,20 @@
         </div>
         <div class="smiley" onclick="stopTimer(), resetGame()">😁</div>
         <table border="0" cellpadding="10" oncontextmenu="return false;"></table>
-        <!--cancel right click inside table-->
     </div>
+    <span class="scoreBoard">
+        <span>They Have Lived To Tell The Tail <br> 🏆 <br> <br></span>
+        <span>Baby Sweeper: <br></span>
+        <span class="baby"> ---------</span>
+        <span> <br> Those Who Play For Fun <br> <br></span>
+        <span>Pro Sweeper: <br></span>
+        <span class="pro"> --------- </span>
+        <span><br> Only The Brave <br> <br></span>
+        <span>Bomb Squad: <br></span>
+        <span class="squad"> ---------  </span>
+        <span><br> No One Has Ever Dared <br> <br></span>
+        <button class="resetScore" onclick="resetBestScore()">Reset Scores</button>
+    </span>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
 </body>
