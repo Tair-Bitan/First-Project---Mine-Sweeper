@@ -173,7 +173,8 @@ table{
   }
 
   .resetScore{
-    background-image: url(/img/wood-background.jpg);
+/*     background-image: url(/img/wood-background.jpg); */
+      background-color: transparent;
     font-family: 'Bubblegum Sans', cursive;
     font-size: 25px;
     color: rgb(65, 31, 4);
